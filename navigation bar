@@ -1,0 +1,55 @@
+<!-- Stock Menu Dropdown -->
+                        <li class="nav-item dropdown stock-dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="stockDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu-icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                                <span class="menu-text">Stock</span>
+                            </a>
+                            
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="stockDropdown">
+                                <li><a class="dropdown-item" href="owner-stock.php">Stock In & Out</a></li>
+                                <li><a class="dropdown-item" href="manage-stock.php">Manage Stock</a></li>
+                            </ul>
+                            
+                        </li>
+
+                        <!-- Operating Expenses Dropdown Menu -->
+<li class="nav-item dropdown operating-expenses-dropdown">
+  <a class="nav-link dropdown-toggle d-flex align-items-center"
+     href="#" id="operatingExpensesDropdown" role="button"
+     data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="menu-icon"><i class="fas fa-money-bill-wave"></i></div>
+      <span class="menu-text">Operating Expenses</span>
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="operatingExpensesDropdown">
+      <li><a class="dropdown-item" href="owner-operating-expenses.php">New Operating Expenses</a></li>
+      <li><a class="dropdown-item" href="operating-expenses-table.php">Manage Operating Expenses</a></li>
+  </ul>
+</li>
+
+
+
+                        
+                         <!-- Closing Report Dropdown Menu -->
+                       <li class="nav-item dropdown closing-report-dropdown">
+                       <a class="nav-link dropdown-toggle d-flex align-items-center"
+                       href="#" id="closingReportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <div class="menu-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                           <span class="menu-text">Closing Report</span>
+                           </a>
+                           
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="closingReportDropdown">
+                                <li><a class="dropdown-item" href="owner-closing-report.php">New Closing Report</a></li>
+                                <li><a class="dropdown-item" href="closing-report-table.php">Manage Closing Report</a></li>
+                             </ul>
+                    
+                         </li>
+
+
+<!-- Operating Expenses Menu Item -->
+<a class="mini-nav-link" href="owner-operating-expenses.php" title="Operating Expenses">
+    <i class="fas fa-money-bill-wave"></i>
+</a>

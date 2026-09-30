@@ -1,0 +1,130 @@
+<!-- Sidebar Navigation -->
+            <nav id="sidebar" class="sidebar">
+                <div class="sidebar-sticky">
+                    
+                    <!-- Brand Logo Section -->
+                    <div class="sidebar-header">
+                        <div class="brand-logo">
+                            <i class="fas fa-chart-pie"></i>
+                            <span class="brand-text">ezAccount</span>
+                        </div>
+                        <button id="sidebarCollapse" class="collapse-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Main Navigation Menu -->
+                    <ul class="nav flex-column">
+                        <li class="nav-item menu-item">
+                            <a class="nav-link" href="owner-dashboard.php">
+                                <div class="menu-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- Outlet Menu Item -->
+                        <li class="nav-item menu-item">
+                            <a class="nav-link" href="owner-outlet.php">
+                                <div class="menu-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <span class="menu-text">Outlet</span>
+                            </a>
+                        </li>
+                        
+                        <!-- Staff Menu Item -->
+                        <li class="nav-item menu-item">
+                            <a class="nav-link" href="owner-staff.php">
+                                <div class="menu-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <span class="menu-text">Staff</span>
+                            </a>
+                        </li>
+
+                        <!-- Stock Menu Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="stockDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu-icon">
+                                    <i class="fas fa-boxes"></i>
+                                </div>
+                                <span class="menu-text">Stock</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="stockDropdown">
+                                <li><a class="dropdown-item" href="owner-stock.php">Stock In & Out</a></li>
+                                <li><a class="dropdown-item active" href="manage-stock.php">Manage Stock</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Closing Report Dropdown Menu -->
+                        <li class="nav-item closing-report-dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center"
+                            href="#" id="closingReportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="menu-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                                <span class="menu-text">Closing Report</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="closingReportDropdown">
+                                <li><a class="dropdown-item" href="owner-closing-report.php">New Closing Report</a></li>
+                                <li><a class="dropdown-item" href="closing-report-table.php">Manage Closing Report</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    
+                    <!-- User Profile -->
+                    <div class="sidebar-footer">
+                        <div class="user-profile">
+                            <div class="user-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div class="user-details">
+                                <h6 class="user-name"><?php echo htmlspecialchars($userName); ?></h6>
+                                <small class="user-role">Business Owner</small>
+                                <small class="user-company"><?php echo htmlspecialchars($companyName); ?></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Mini Sidebar -->
+            <nav id="mini-sidebar" class="mini-sidebar">
+                <div class="mini-sidebar-sticky">
+                    <a class="mini-nav-link" href="owner-dashboard.php" title="Dashboard"><i class="fas fa-tachometer-alt"></i></a>
+                    <!-- Outlet Menu Item -->
+                    <a class="mini-nav-link" href="owner-outlet.php" title="Outlet">
+                        <i class="fas fa-store"></i>
+                    </a>
+                    
+                    <!-- Staff Menu Item -->
+                    <a class="mini-nav-link" href="owner-staff.php" title="Staff">
+                        <i class="fas fa-users"></i>
+                    </a>
+                    <a class="mini-nav-link active" href="manage-stock.php" title="Stock"><i class="fas fa-boxes"></i></a>
+                    <a class="mini-nav-link" href="owner-closing-report.php" title="Closing Report"><i class="fas fa-file-invoice-dollar"></i></a>
+                    <button id="sidebarExpand" class="expand-btn" title="Expand Menu"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </nav>
+
+
+            <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center p-4">
+                    <i class="fas fa-sign-out-alt fa-3x text-primary mb-3"></i>
+                    <h4>Confirm Logout</h4>
+                    <p>Are you sure you want to logout?</p>
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='logout.php'">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     // Logout
+        document.getElementById('logoutBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            modals.logout.show();
+        });
