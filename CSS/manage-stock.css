@@ -1,0 +1,1142 @@
+/* ==============================================
+   Enhanced Manage Stock Styles (Staff-like Design)
+   ============================================== */
+
+/* Content Container */
+.content-container {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-family: 'Poppins', sans-serif;
+    min-height: calc(100vh - 120px);
+    position: relative;
+    padding-bottom: 130px;
+}
+
+/* Category Section */
+.category-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    border-left: 4px solid #007bff;
+    overflow: hidden;
+}
+
+.category-header {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.category-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 5px;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.category-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Stock Item Cards */
+.stock-item-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    min-height: 180px;
+}
+
+.stock-item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Actions (Edit/Delete buttons) - ENHANCED: Prevent overlay with item name */
+.card-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stock-item-card:hover .card-actions {
+    opacity: 1;
+}
+
+.card-actions .btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+    position: relative;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+    line-height: 1.3;
+    padding-right: 80px; /* ENHANCED: Space for action buttons */
+    min-height: 40px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.detail-item .label {
+    font-weight: 500;
+    color: #555;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.detail-item .value {
+    color: #2c3e50;
+    font-weight: 600;
+    word-break: break-word;
+    flex: 1;
+}
+
+/* Floating Add (+) Button — match Owner Staff FAB */
+.floating-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 54px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    font-size: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* visual style */
+    background: linear-gradient(135deg, #4895ef, #4361ee);
+    color: #fff;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 28px rgba(67,97,238,0.55);
+    z-index: 3000;
+
+    /* smooth interactions */
+    transition: all 0.3s;
+
+    /* keep corner anchor so it doesn't "jump" when scaling */
+    transform-origin: bottom right;
+}
+
+.floating-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #4361ee, #4895ef);
+    color: #fff;
+    transform: scale(1.15) translateY(-6px);
+    box-shadow: 0 20px 45px rgba(67,97,238,0.7);
+}
+
+.floating-btn:disabled {
+    background: #a8a8a8 !important;
+    color: #eee !important;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.floating-btn-category {
+    background: linear-gradient(135deg, #4895ef, #4361ee);
+}
+
+/* Modal Styling - Enhanced to match staff interface */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-height: 95vh;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 28px 25px 15px 25px;
+    border-radius: 15px 15px 0 0;
+    background: linear-gradient(135deg, #4895ef, #4361ee);
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    min-height: 80px;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.modal-body {
+    padding: 28px 44px 12px 44px;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 20px 25px;
+    border-radius: 0 0 15px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Form Styling - Enhanced to match staff interface */
+.form-label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 40px 12px 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220,53,69,0.25);
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    word-break: break-word;
+}
+
+.form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    word-break: break-word;
+}
+
+/* Input Group Styling - ENHANCED: Better responsive behavior */
+.input-group {
+    margin-bottom: 1rem;
+    flex-wrap: nowrap;
+}
+
+.input-group-text {
+    background: #f6f7fb;
+    border-right: none;
+    color: #4895ef;
+    z-index: 1;
+    flex-shrink: 0;
+    min-width: 45px;
+    justify-content: center;
+}
+
+.form-floating {
+    position: relative;
+    flex-grow: 1;
+    min-width: 0; /* Important for flexbox shrinking */
+}
+
+.validation-icon-inside {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: transparent;
+    padding: 0 1px;
+    pointer-events: none;
+}
+
+.validation-icon-inside i {
+    font-size: 18px;
+}
+
+.fa-check-circle {
+    color: #28a745;
+}
+
+.fa-times-circle {
+    color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 3px;
+    min-height: 18px;
+    padding-left: 5px;
+    word-break: break-word;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.9rem;
+    word-break: break-word;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c82333, #a71e2a);
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e0a800, #d39e00);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #545b62);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #545b62, #4e555b);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: white;
+}
+
+.btn-outline-danger {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    background: transparent;
+}
+
+.btn-outline-danger:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Alert Styling */
+.alert {
+    border-radius: 8px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    word-break: break-word;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+/* Empty State Styling */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-state h4 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.empty-category {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #dee2e6;
+    word-break: break-word;
+}
+
+/* Notification Modal Styling */
+.notification-icon {
+    display: block;
+    font-size: 3.4rem !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+
+.notification-icon.success .rounded-circle {
+    background: #e6f8ea !important;
+}
+
+.notification-icon.error .rounded-circle {
+    background: #f8e6e6 !important;
+}
+
+.notification-title { 
+    color: #212529; 
+    margin-bottom: 15px; 
+    font-weight: 700; 
+    font-size: 1.6rem; 
+    text-align: center; 
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.notification-message { 
+    color: #6c757d; 
+    margin-bottom: 25px; 
+    line-height: 1.5; 
+    font-size: 1.07rem; 
+    text-align: center; 
+    word-break: break-word;
+}
+
+.notification-button {
+    background: #4895ef;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 38px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(67,97,238,0.19);
+    font-size: 1.18rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.notification-button:hover {
+    background: #4361ee;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67,97,238,0.29);
+}
+
+/* ==============================================
+   ENHANCED RESPONSIVE DESIGN
+   ============================================== */
+
+/* Large Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .content-container {
+        padding: 25px 20px;
+        padding-bottom: 120px;
+    }
+    
+    .category-section {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .category-header {
+        padding: 18px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .category-actions {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .modal-body {
+        padding: 25px 35px 10px 35px;
+    }
+    
+    .stock-item-card {
+        margin-bottom: 20px;
+    }
+    
+    .card-title {
+        padding-right: 70px;
+    }
+}
+
+
+
+/* Mobile Phones (576px and below) */
+@media (max-width: 576px) {
+    .content-container {
+        padding: 15px 10px;
+        margin: 5px;
+        padding-bottom: 100px;
+        border-radius: 8px;
+    }
+    
+    .category-section {
+        padding: 15px 12px;
+        margin-bottom: 18px;
+        border-radius: 10px;
+    }
+    
+    .category-header {
+        padding: 14px 12px;
+        border-radius: 6px;
+    }
+    
+    .category-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .category-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 6px;
+    }
+    
+    .category-actions .btn {
+        width: 100%;
+        margin-bottom: 5px;
+        justify-content: center;
+    }
+    
+    .card-title {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        padding-right: 0;
+        min-height: auto;
+    }
+    
+    .detail-item {
+        font-size: 0.82rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        margin-bottom: 8px;
+    }
+    
+    .detail-item .label {
+        min-width: auto;
+        font-size: 0.78rem;
+    }
+    
+    .detail-item .value {
+        font-size: 0.85rem;
+    }
+    
+    .card-actions {
+        top: 6px;
+        right: 6px;
+        position: relative;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .card-actions .btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+    
+    /* ENHANCED: Modal for Small Screens */
+    .modal-dialog {
+        margin: 5px;
+        max-width: calc(100% - 10px);
+    }
+    
+    .modal-body {
+        padding: 18px 20px;
+        
+    }
+    
+    .modal-header {
+        padding: 18px 15px 10px 15px;
+        min-height: 65px;
+    }
+    
+    .modal-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .modal-footer {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+        margin: 2px 0;
+    }
+    
+    /* ENHANCED: Form Inputs for Mobile */
+    .form-control {
+        padding: 10px 30px 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .input-group-text {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .validation-icon-inside {
+        right: 10px;
+    }
+    
+    .validation-icon-inside i {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 9px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .notification-button { 
+        padding: 12px 16px; 
+        font-size: 1rem; 
+    }
+    
+    .notification-title { 
+        font-size: 1.3rem; 
+    }
+    
+    .notification-message { 
+        font-size: 0.95rem; 
+    }
+    
+    .notification-icon { 
+        font-size: 2.8rem !important;
+    }
+    
+    .empty-state {
+        padding: 30px 15px;
+    }
+    
+    .empty-state i {
+        font-size: 3rem;
+    }
+    
+    .empty-state h4 {
+        font-size: 1.1rem;
+    }
+    
+    .floating-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+        border-width: 3px;
+    }
+}
+
+/* Small Mobile Phones (375px and below) */
+@media (max-width: 375px) {
+    .content-container {
+        padding: 12px 8px;
+        margin: 3px;
+        padding-bottom: 90px;
+    }
+    
+    .category-section {
+        padding: 12px 10px;
+    }
+    
+    .category-header {
+        padding: 12px 10px;
+    }
+    
+    .modal-body {
+        padding: 15px 18px;
+        max-height: 50vh;
+    }
+    
+    .modal-header {
+        padding: 15px 12px 8px 12px;
+        min-height: 60px;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .form-control {
+        padding: 8px 25px 8px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .input-group-text {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .floating-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 65px;
+        height: 65px;
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 15px 12px;
+    }
+    
+    .card-actions {
+        margin-bottom: 8px;
+    }
+}
+
+/* Extra Small Mobile Phones (320px and below) */
+@media (max-width: 320px) {
+    .content-container {
+        padding: 10px 5px;
+        padding-bottom: 85px;
+    }
+    
+    .modal-body {
+        padding: 12px 15px;
+    }
+    
+    .modal-header {
+        padding: 12px 10px 6px 10px;
+    }
+    
+    .modal-title {
+        font-size: 1.1rem;
+    }
+    
+    .floating-btn {
+        bottom: 12px;
+        right: 12px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .form-control {
+        padding: 7px 22px 7px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Custom Scrollbar for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for modal entries */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover effects for cards */
+.stock-item-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stock-item-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.btn:focus {
+    z-index: 1;
+}
+
+/* Modal Responsive Classes */
+.modal-xxl { 
+    max-width: 600px; 
+    min-width: 340px; 
+}
+
+.modal-body-scroll {
+    max-height: 68vh;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.modal-header-centered {
+    background: linear-gradient(135deg, #4895ef, #4361ee);
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+    padding: 28px 25px 15px 25px;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-title-white {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center !important;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    word-break: break-word;
+}
+
+@media (max-width: 700px) { 
+    .modal-xxl { 
+        max-width: 99vw; 
+        min-width: 96vw; 
+    } 
+}
+
+@media (max-width: 400px) { 
+    .modal-xxl { 
+        max-width: 100vw; 
+        min-width: 100vw; 
+    } 
+}
+
+.shadow-sm { 
+    box-shadow: 0 2px 8px rgba(67,97,238,0.09);
+}
+
+.shadow-lg { 
+    box-shadow: 0 4px 26px rgba(67,97,238,0.14);
+}
+
+/* Text overflow prevention for long category and item names */
+.text-truncate-multiline {
+    display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Ensure images and media are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Grid system enhancements for small screens */
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col-xl-3, .col-lg-4, .col-md-6, .col-sm-12 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* ENHANCED: Better touch targets for mobile */
+@media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-control {
+        min-height: 44px;
+    }
+    
+    .card-actions .btn {
+        min-height: 32px;
+    }
+}
+
+/* ENHANCED: Improved form validation visibility on mobile */
+@media (max-width: 576px) {
+    .error-message {
+        font-size: 14px;
+        margin-top: 2px;
+        min-height: 16px;
+    }
+    
+    .validation-icon-inside i {
+        font-size: 14px;
+    }
+}
+
+/* ======= FINAL PERFECT FIX FOR BOOTSTRAP MODAL FORMS ON MOBILE/TABLET ======= */
+/* Move the floating label up a bit when floated */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select:focus ~ label,
+.form-floating > .form-select:not([value=""]) ~ label {
+  transform: scale(.85) translateY(-0.9rem) !important; /* Default is -1.5rem, make it higher (more negative) */
+  background: transparent !important;
+  z-index: 2;
+  left: 0.75rem;
+  padding-left: 0.2em; /* optional: small padding */
+  padding-right: 0.2em;
+}
+/* Modal full-width, no border radius, minimal padding */
+@media (max-width: 800px) {
+  .modal-dialog, .modal-xxl {
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+    
+  }
+  .modal-content {
+    border-radius: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .modal-header, .modal-body, .modal-footer {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .modal-title {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Input group always horizontal, icon and input side-by-side */
+.modal-body .input-group {
+  flex-wrap: nowrap !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-bottom: 12px !important;
+  gap: 0 !important;
+}
+
+/* Icon styling: left, small, vertically centered */
+.modal-body .input-group-text {
+  min-width: 42px !important;
+  max-width: 46px !important;
+  width: 44px !important;
+  font-size: 1.1rem !important;
+  border-radius: 8px 0 0 8px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f6f7fb;
+  border-right: none;
+}
+
+/* Input stretches to fill, right side rounded */
+.modal-body .form-floating {
+  flex: 1 1 auto !important;
+  width: 1% !important;
+  min-width: 0 !important;
+}
+.modal-body .form-control {
+  border-radius: 0 8px 8px 0 !important;
+  font-size: 1rem !important;
+  padding: 10px 38px 10px 12px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Validation icon always at right end of input */
+.validation-icon-inside {
+  right: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+/* Reduce vertical space between fields */
+.modal-body .mb-3 {
+  margin-bottom: 10px !important;
+}
+
+
+
+/* Buttons full width on mobile/tablet */
+@media (max-width: 800px) {
+  .modal-footer .btn, .modal-footer button {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 6px !important;
+    font-size: 1rem !important;
+    padding: 10px !important;
+  }
+}
+
+/* Ensure category name wraps and does NOT overflow its box */
+.category-header h4,
+.category-title,
+.category-section h4 {
+  display: block;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+/* If inside a flex container, allow the text box to shrink/grow normally */
+.category-header .mb-1,
+.category-header h4 {
+  flex: 1 1 0%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* If you want ellipsis after two lines instead of wrapping forever, use this: */
+/*
+.category-header h4,
+.category-title,
+.category-section h4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  max-width: 100%;
+  white-space: normal !important;
+}
+*/

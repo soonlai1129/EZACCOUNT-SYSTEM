@@ -1,0 +1,281 @@
+/* 
+ * ezAccount System - Login Page Styles
+ * Clean and professional design with gradient background
+ */
+
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+body {
+    /* Subtle gradient background without animation */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 0;
+}
+
+.card-header h3 {
+    font-weight: 700;
+    margin: 0;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.input-group {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.2);
+}
+
+.input-group-text {
+    background: white;
+    border-right: none;
+    padding: 0 15px;
+    color: var(--primary-color);
+}
+
+.form-control {
+    border-radius: 0 8px 8px 0;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-left: none;
+    transition: all 0.3s;
+}
+
+/* Adjusted focus style to match Forgot Password page */
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.15);
+    outline: none;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--primary-color);
+}
+
+.btn-login {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
+}
+
+.btn-login:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(67, 97, 238, 0.4);
+    color: white;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.forgot-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.register-link {
+    color: #f72585;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.register-link:hover {
+    color: #d81159;
+    text-decoration: underline;
+}
+
+/* Enhanced Notification Modal Styles */
+.notification-modal-content {
+    border-radius: 15px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal.show .notification-modal-content {
+    transform: translateY(0);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.notification-icon {
+    font-size: 70px;
+    /* Increased size for better visibility */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.notification-icon.success {
+    color: var(--success-color);
+}
+
+.notification-icon.error {
+    color: var(--error-color);
+}
+
+.notification-title {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.notification-message {
+    color: #6c757d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.notification-button {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+}
+
+.notification-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(67, 97, 238, 0.45);
+    color: white;
+}
+
+.notification-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(67, 97, 238, 0.3);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+}
+
+/* Prevent closing modal on backdrop click */
+.modal {
+    pointer-events: none;
+}
+
+.modal-dialog {
+    pointer-events: auto;
+}
+
+/* Popup modal enhancements */
+#notificationModal .notification-modal-content {
+    border-radius: 15px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#notificationModal .notification-modal-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 576px) {
+    .card {
+        box-shadow: none;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* Notification modal adjustments for mobile */
+    .modal-body {
+        padding: 20px;
+    }
+
+    .notification-icon {
+        font-size: 60px;
+        /* Slightly smaller on mobile but still prominent */
+        margin-bottom: 15px;
+    }
+
+    .notification-title {
+        font-size: 1.3rem;
+    }
+
+    .notification-message {
+        font-size: 0.9rem;
+    }
+
+    .notification-button {
+        padding: 10px 25px;
+    }
+}
