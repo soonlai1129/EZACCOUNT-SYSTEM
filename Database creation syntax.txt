@@ -1,0 +1,165 @@
+CREATE DATABASE ezaccount;
+
+
+-- 1. business_owners
+
+CREATE TABLE business_owners (
+    owner_id INT PRIMARY KEY AUTO_INCREMENT,
+    owner_name VARCHAR(255) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(12) NOT NULL
+);
+
+-- 2. outlets
+
+CREATE TABLE outlets (
+    outlet_id INT PRIMARY KEY AUTO_INCREMENT,
+    owner_id INT NOT NULL,
+    outlet_name VARCHAR(255) NOT NULL,
+    outlet_address VARCHAR(255) NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES business_owners(owner_id)
+);
+
+-- 3. staff
+
+CREATE TABLE staff (
+    staff_id INT PRIMARY KEY AUTO_INCREMENT,
+    outlet_id INT NOT NULL,
+    staff_name VARCHAR(255) NOT NULL,
+    ic_number VARCHAR(14) NOT NULL,
+    age INT(3) NOT NULL,
+    phone_number VARCHAR(12) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    FOREIGN KEY (outlet_id) REFERENCES outlets(outlet_id)
+);
+
+-- 4. stock_category
+
+CREATE TABLE stock_category (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_name VARCHAR(255) NOT NULL,
+    outlet_id INT NOT NULL,
+    FOREIGN KEY (outlet_id) REFERENCES outlets(outlet_id)
+);
+
+-- 5. stock_items
+
+CREATE TABLE stock_items (
+    item_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_id INT NOT NULL,
+    item_name VARCHAR(255) NOT NULL,
+    base_price DECIMAL(10,2) NOT NULL,
+    remaining_quantity INT NOT NULL,
+    total_stock_value DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES stock_category(category_id)
+    
+);
+
+-- 6. stock_movements
+
+CREATE TABLE stock_movements (
+    movement_id INT PRIMARY KEY AUTO_INCREMENT,
+    item_id INT NOT NULL,
+    staff_id INT NULL,
+    movement_date DATE NOT NULL,
+    movement_type ENUM('IN','OUT') NOT NULL,
+    movement_quantity INT NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES stock_items(item_id),
+    FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
+);
+
+-- 7. closing_reports
+
+CREATE TABLE closing_reports (
+    report_id INT PRIMARY KEY AUTO_INCREMENT,
+    outlet_id INT NOT NULL,
+    staff_id INT NULL,
+    report_date DATE NOT NULL,
+    shift ENUM('Morning','Evening') NOT NULL,
+    cash_float DECIMAL(10,2) NOT NULL,
+    cash_sale DECIMAL(10,2) NOT NULL,
+    qr_sale DECIMAL(10,2) NULL,
+    total_cash DECIMAL(10,2) NOT NULL,
+    total_payment DECIMAL(10,2) NOT NULL,
+    expected_cash_in_hand DECIMAL(10,2) NOT NULL,
+    actual_cash_in_hand DECIMAL(10,2) NOT NULL,
+    difference DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (outlet_id) REFERENCES outlets(outlet_id),
+    FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
+);
+
+-- 8. closing_report_payments
+
+CREATE TABLE closing_report_payments (
+    payment_id INT PRIMARY KEY AUTO_INCREMENT,
+    report_id INT NOT NULL,
+    payment_type VARCHAR(100) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (report_id) REFERENCES closing_reports(report_id)
+);
+
+-- 9. closing_report_cash_breakdown
+
+CREATE TABLE closing_report_cash_breakdown (
+    breakdown_id INT PRIMARY KEY AUTO_INCREMENT,
+    report_id INT NOT NULL,
+    denomination DECIMAL(10,2) NOT NULL,
+    quantity INT NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (report_id) REFERENCES closing_reports(report_id)
+);
+
+
+CREATE TABLE operating_expense_records (
+  record_id INT AUTO_INCREMENT PRIMARY KEY,
+  outlet_id INT NOT NULL,
+  record_date DATE NOT NULL,
+  total_operating_expense DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (outlet_id) REFERENCES outlets(outlet_id)
+);
+
+
+CREATE TABLE rental_expenses (
+  rental_id INT AUTO_INCREMENT PRIMARY KEY,
+  record_id INT NOT NULL,
+  expense_name VARCHAR(255) NOT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (record_id) REFERENCES operating_expense_records(record_id)
+);
+
+CREATE TABLE salary_expenses (
+  salary_id INT AUTO_INCREMENT PRIMARY KEY,
+  record_id INT NOT NULL,
+  staff_id INT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (record_id) REFERENCES operating_expense_records(record_id),
+  FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
+);
+
+CREATE TABLE utilities_expenses (
+  utilities_id INT AUTO_INCREMENT PRIMARY KEY,
+  record_id INT NOT NULL,
+  expense_name VARCHAR(255) NOT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (record_id) REFERENCES operating_expense_records(record_id)
+);
+
+CREATE TABLE advertisement_expenses (
+  advertisement_id INT AUTO_INCREMENT PRIMARY KEY,
+  record_id INT NOT NULL,
+  expense_name VARCHAR(255) NOT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (record_id) REFERENCES operating_expense_records(record_id)
+);
+
+CREATE TABLE others_expenses (
+  others_id INT AUTO_INCREMENT PRIMARY KEY,
+  record_id INT NOT NULL,
+  expense_name VARCHAR(255) NOT NULL,
+  amount DECIMAL(12,2) NOT NULL,
+  FOREIGN KEY (record_id) REFERENCES operating_expense_records(record_id)
+);
