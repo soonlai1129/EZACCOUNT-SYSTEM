@@ -1,0 +1,1019 @@
+/* ==============================================
+   Owner Stock Styles - Enhanced Beautiful Design
+   ============================================== */
+
+/* Content Container */
+.content-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    font-family: 'Poppins', sans-serif;
+    min-height: calc(100vh - 120px);
+    margin: 0;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.filter-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+}
+
+.table-card {
+    background: #ffffff;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    padding: 18px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%) !important;
+}
+
+.card-header.bg-light {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    color: #495057;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table Container */
+.table-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+/* Table Styling - Enhanced Beautiful Design */
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px;
+}
+
+.table th {
+    background: linear-gradient(135deg, #000000 0%, #000000 100%);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 15px 12px;
+    font-size: 1.0rem;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid white;
+}
+
+.table th:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255,255,255,0.3);
+}
+
+.table td {
+    padding: 12px 12px;
+    vertical-align: middle;
+    word-wrap: break-word;
+    transition: background-color 0.2s ease;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.table-striped tbody tr:nth-of-type(odd) td {
+    background-color: #fafbff;
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #f0f4ff !important;
+}
+
+/* Badge Styling */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #4CAF50, #45a049) !important;
+}
+
+.badge.bg-danger {
+    background: linear-gradient(135deg, #f44336, #da190b) !important;
+}
+
+/* Button Styling - Enhanced */
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover:before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9800, #e68900);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e68900, #cc7a00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f44336, #da190b);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #da190b, #c21807);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
+}
+
+.btn-outline-secondary {
+    background: transparent;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background: #6c757d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Center the New Stock Movement button */
+.btn-add-movement {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+/* Ensure the parent container properly centers content */
+.row.mb-4 .col-12.text-center {
+    text-align: center !important;
+    display: block !important;
+}
+
+/* Form Styling */
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    background: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+    background: #fff;
+}
+
+/* Input Group Styling */
+.input-group-text { 
+    background: linear-gradient(135deg, #f8f9ff 0%, #e9ecef 100%);
+    border: 2px solid #e9ecef;
+    border-right: none;
+    color: #2980b9;
+    z-index: 1;
+}
+
+.input-group .form-control, 
+.input-group .form-select {
+    border-left: none;
+    padding-left: 12px;
+}
+
+.input-group .form-control:focus,
+.input-group .form-select:focus {
+    border-left: none;
+}
+
+.purple-icon { 
+    color: #2980b9 !important; 
+}
+
+/* Enhanced Form Validation Styling - FIXED: Validation icons outside */
+.form-floating {
+    position: relative;
+}
+
+.validation-icon-outside {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: transparent;
+    padding: 0 1px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.validation-icon-outside.show {
+    opacity: 1;
+}
+
+.validation-icon-outside i { 
+    font-size: 20px; 
+}
+
+.fa-check-circle { 
+    color: #28a745; 
+}
+
+.fa-times-circle { 
+    color: #dc3545; 
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+    padding-left: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Form validation states - REMOVED extra green tick styles */
+.is-valid {
+    border-color: #28a745 !important;
+    background-image: none !important;
+    padding-right: 15px !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    background-image: none !important;
+    padding-right: 15px !important;
+}
+
+/* Item Details Styling */
+.item-details {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 0.85rem;
+    display: none;
+}
+
+.item-details small {
+    color: #155724;
+    font-weight: 500;
+}
+
+/* Alert Styling */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+/* Empty State Styling */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+    color: #3498db;
+}
+
+.empty-state h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #495057;
+    font-weight: 600;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #6c757d;
+}
+
+/* Modal Styling - FIXED: Larger modal size for better validation icon visibility */
+.modal-lg {
+    max-width: 700px;
+}
+
+.modal-header-centered {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-header-centered:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.modal-title-white {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 20px 25px;
+    border-radius: 0 0 15px 15px;
+    background: #f8f9fa;
+}
+
+/* Delete Modal Styling */
+.delete-modal .modal-content {
+    border: 2px solid #dc3545;
+}
+
+.delete-modal .modal-header {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border-bottom: none;
+}
+
+.delete-modal .modal-body {
+    text-align: center;
+    padding: 30px;
+}
+
+.modal-icon.text-danger {
+    color: #dc3545;
+}
+
+/* ==============================================
+   ENHANCED RESPONSIVE DESIGN - COMPLETELY REDESIGNED
+   ============================================== */
+
+/* Enhanced PC View - Better text handling */
+@media (min-width: 993px) {
+    .content-container {
+        padding: 30px;
+    }
+    
+    .table th, .table td {
+        padding: 15px 12px;
+    }
+    
+    /* Better text handling for long content in PC view */
+    .table td {
+           max-width: none;          /* remove fixed width */
+        overflow: visible;        /* allow full text */
+        text-overflow: unset;     /* remove ellipsis */
+        white-space: normal;      /* allow multi-line wrapping */
+        word-break: break-word;   /* ensure long words wrap */
+    }
+    
+    /* Specific columns with potential long text */
+    .table td:nth-child(4), /* Category column */
+    .table td:nth-child(5) { /* Item column */
+        max-width: 250px;
+        min-width: 150px;
+    }
+    
+    /* Tooltip effect for truncated text */
+    .table td:hover::after {
+        content: attr(data-fulltext);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        white-space: normal;
+        z-index: 1000;
+        max-width: 300px;
+        word-wrap: break-word;
+    }
+    
+    /* Hide mobile filter button wrapper on desktop */
+    .filter-buttons-mobile {
+        display: block;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 769px) {
+    .content-container {
+        padding: 20px 15px;
+    }
+    
+    .table th, .table td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* Ensure table columns don't overflow */
+    .table td {
+         max-width: none;          /* remove fixed width */
+        overflow: visible;        /* allow full text */
+        text-overflow: unset;     /* remove ellipsis */
+        white-space: normal;      /* allow multi-line wrapping */
+        word-break: break-word;   /* ensure long words wrap */
+    }
+    
+    /* Filter buttons spacing for tablets */
+    .filter-buttons-mobile {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+/* COMPLETELY REDESIGNED MOBILE TABLE - FIXED ALL ISSUES */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 15px 10px;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    /* Mobile Table Styles - COMPLETELY REDESIGNED */
+    .table-container {
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+    }
+    
+    .table {
+        min-width: 100%;
+        background: transparent;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody {
+        display: block;
+        width: 100%;
+    }
+    
+    .table tr {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid #e9ecef;
+        border-radius: 10px;
+        padding: 15px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+        position: relative;
+    }
+    
+    .table tr:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 12px 10px;
+        border: none;
+        border-bottom: 1px solid #f8f9fa;
+        text-align: left;
+        position: relative;
+        max-width: none;
+        white-space: normal;
+        word-break: break-word;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .table td:last-child {
+        border-bottom: none;
+        padding-top: 15px;
+        margin-top: 10px;
+        border-top: 2px solid #f0f0f0;
+    }
+    
+    .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #495057;
+        text-align: left;
+        flex: 0 0 35%;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        padding: 2px 0;
+    }
+    
+    .table td > *:not(:first-child) {
+        flex: 1;
+        text-align: left;
+        font-size: 0.85rem;
+        word-break: break-word;
+        padding: 2px 0;
+    }
+    
+    /* Badge styling for mobile */
+    .table td .badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        white-space: nowrap;
+    }
+    
+    /* Action buttons for mobile - COMPLETELY REDESIGNED */
+    .table td[data-label="Actions"] {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px 10px 5px 10px;
+        border-top: 2px solid #f0f0f0;
+        margin-top: 10px;
+        background: #fafafa;
+        border-radius: 0 0 8px 8px;
+    }
+    
+    .table td[data-label="Actions"]::before {
+        content: "Actions";
+        font-weight: 600;
+        color: #495057;
+        text-align: left;
+        flex: 0 0 100%;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .table td[data-label="Actions"] .action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    
+    .table td[data-label="Actions"] .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+        font-size: 0.85rem;
+        margin: 0;
+        border-radius: 6px;
+    }
+    
+    /* Card adjustments */
+    .card-header h5 {
+        font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Form adjustments */
+    .form-control, .form-select {
+        padding: 10px 12px;
+        font-size: 16px; /* Better for mobile */
+    }
+    
+    .modal-header, .modal-footer {
+        padding: 15px 20px;
+    }
+    
+    .modal-title-white {
+        font-size: 1.3rem;
+    }
+    
+    /* Filter form adjustments */
+    .row.g-3 > [class*="col-"] {
+        margin-bottom: 15px;
+    }
+    
+    /* Enhanced mobile form styling */
+    .form-floating > .form-control,
+    .form-floating > .form-select {
+        height: calc(3.5rem + 2px);
+        line-height: 1.25;
+    }
+    
+    .form-floating > label {
+        padding: 1rem 0.75rem;
+    }
+    
+    /* Fix validation icon positioning for mobile */
+    .validation-icon-outside {
+        right: -25px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .validation-icon-outside i {
+        font-size: 18px;
+    }
+    
+    /* Filter buttons spacing for mobile */
+    .filter-buttons-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-buttons-mobile .btn {
+        margin: 0;
+    }
+}
+
+/* Extra Small Devices (phones) */
+@media (max-width: 576px) {
+    .content-container {
+        padding: 10px 5px;
+    }
+    
+    .table td::before {
+        flex: 0 0 40%;
+        font-size: 0.75rem;
+    }
+    
+    .table td > *:not(:first-child) {
+        flex: 0 0 55%;
+        font-size: 0.8rem;
+    }
+    
+    .table tr {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .table td {
+        padding: 10px 8px;
+    }
+    
+    .table td[data-label="Actions"] {
+        padding: 12px 8px 3px 8px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .filter-section .row > div {
+        margin-bottom: 12px;
+    }
+    
+    .empty-state {
+        padding: 40px 15px;
+    }
+    
+    .empty-state i {
+        font-size: 3rem;
+    }
+    
+    .empty-state h4 {
+        font-size: 1.3rem;
+    }
+    
+    /* Action buttons for extra small screens */
+    .table td[data-label="Actions"] .btn {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    /* Further adjust validation icons for very small screens */
+    .validation-icon-outside {
+        right: -20px;
+        width: 18px;
+        height: 18px;
+    }
+    
+    .validation-icon-outside i {
+        font-size: 16px;
+    }
+    
+    /* Make modal full width on very small screens */
+    .modal-lg {
+        max-width: 95%;
+        margin: 10px auto;
+    }
+}
+
+/* Custom Scrollbar */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #34495e, #2980b9);
+}
+
+/* Animation for table rows */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table tbody tr {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar, .topbar, .btn, .alert, .filter-card, .btn-add-movement {
+        display: none !important;
+    }
+    
+    .content-container {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        background: white;
+    }
+    
+    .table {
+        font-size: 12px;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .badge {
+        border: 1px solid #000;
+        color: #000 !important;
+        background: none !important;
+    }
+}
+
+/* Enhanced table cell styling for better text handling */
+.table td {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Delete modal backdrop */
+.delete-modal {
+    backdrop-filter: blur(5px);
+}
+
+.delete-modal .modal-dialog {
+    pointer-events: auto;
+}
+
+/* Enhanced form floating labels with validation */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+    color: #6c757d;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-floating > .form-control.is-valid ~ label,
+.form-floating > .form-select.is-valid ~ label {
+    color: #28a745;
+}
+
+.form-floating > .form-control.is-invalid ~ label,
+.form-floating > .form-select.is-invalid ~ label {
+    color: #dc3545;
+}
+
+/* Enhanced input group with floating labels */
+.input-group .form-floating {
+    flex: 1 1 auto;
+    width: 1%;
+    position: relative;
+}
+
+.input-group .form-floating .form-control {
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.input-group .form-floating .form-control:focus {
+    z-index: 3;
+}
+
+.validation-icon-outside.show {
+    animation: slideIn 0.3s ease;
+}
+
+/* Fix for disabled select options */
+.form-select option:disabled {
+    color: #6c757d;
+    background-color: #f8f9fa;
+}
+
+/* Fix for validation icon positioning in input groups */
+.input-group {
+    position: relative;
+}
+
+.input-group .validation-icon-outside {
+    right: -40px;
+}
+
+/* Ensure consistent modal styling between add and edit forms */
+#addMovementModal .input-group,
+#editMovementModal .input-group {
+    position: relative;
+}
+
+#addMovementModal .validation-icon-outside,
+#editMovementModal .validation-icon-outside {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Mobile adjustments for validation icons */
+@media (max-width: 768px) {
+    #addMovementModal .validation-icon-outside,
+    #editMovementModal .validation-icon-outside {
+        right: -25px;
+    }
+}
+
+@media (max-width: 576px) {
+    #addMovementModal .validation-icon-outside,
+    #editMovementModal .validation-icon-outside {
+        right: -20px;
+    }
+}

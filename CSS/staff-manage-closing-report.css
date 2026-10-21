@@ -1,0 +1,195 @@
+/* ==============================================
+   Global Font & Body
+   ============================================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==============================================
+   Main Content
+   ============================================== */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin 0.3s;
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-body label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* ==============================================
+   Form Controls
+   ============================================== */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13,110,253,0.25);
+}
+
+/* ==============================================
+   Sections
+   ============================================== */
+h5 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #444;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+/* ==============================================
+   Purchase Items Section – Interactive Enhancements
+   ============================================== */
+.purchase-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+}
+
+.purchase-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Purchase price input smooth update */
+.purchase_price {
+    transition: all 0.2s ease-in-out;
+}
+
+.purchase_price:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13,110,253,0.2);
+}
+
+/* Remove button hover animation */
+.remove-item {
+    transition: all 0.25s ease-in-out;
+}
+
+.remove-item:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Add Item button hover */
+#addItemBtn {
+    transition: all 0.2s ease;
+}
+
+#addItemBtn:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* ==============================================
+   Cash Breakdown – Smooth interactions
+   ============================================== */
+.denomination {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.denomination:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.05);
+}
+
+/* Highlight field when focus or value changes */
+.denomination:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13,110,253,0.25);
+}
+
+/* Expected cash, actual cash, difference animations */
+#expected_cash, #actual_cash, #difference {
+    transition: all 0.25s ease-in-out;
+}
+
+#difference.zero {
+    background-color: #d4edda;
+    color: #155724;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+#difference.nonzero {
+    background-color: #f8d7da;
+    color: #721c24;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+/* ==============================================
+   Sidebar Mini/Collapse Smooth Transitions
+   ============================================== */
+.sidebar, .mini-sidebar {
+    transition: all 0.3s ease-in-out;
+}
+
+.collapse-btn, .expand-btn {
+    transition: transform 0.3s ease;
+}
+
+.collapse-btn:hover, .expand-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ==============================================
+   Topbar User Info – Hover animations
+   ============================================== 
+.user-avatar-sm, .user-avatar {
+    transition: all 0.2s ease;
+}
+
+.user-avatar-sm:hover, .user-avatar:hover {
+    color: #0d6efd;
+    transform: scale(1.1);
+}*/
+
+/* ==============================================
+   Responsive – Purchase Items hover removal on small screens
+   ============================================== */
+@media (max-width: 576px) {
+    .purchase-item:hover {
+        box-shadow: none;
+        transform: none;
+    }
+    .remove-item:hover {
+        transform: scale(1.05) rotate(0deg);
+    }
+    .denomination:hover {
+        transform: none;
+    }
+}
+

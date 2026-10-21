@@ -1,0 +1,274 @@
+/* ===== Advanced Graph Styles (keeps your existing classes/ids) ===== */
+
+/* Theme tokens */
+:root{
+  --card-bg: rgba(255,255,255,.88);
+  --card-blur: blur(8px);
+  --border: rgba(255,255,255,.40);
+  --text:#0f172a;
+  --muted:#64748b;
+  --ring:rgba(99,102,241,.22);
+  --shadow:0 22px 46px rgba(2,6,23,.12);
+  --radius:20px;
+
+  --indigo:#6366F1;
+  --cyan:#06B6D4;
+  --emerald:#10B981;
+  --amber:#F59E0B;
+  --pink:#EC4899;
+}
+
+/* Reset */
+*{ box-sizing:border-box }
+
+/* Card: fill available width on large screens */
+.graph-wrapper{
+  position:relative;
+  width:100%;
+  max-width:none;              /* fill parent container */
+  background: var(--card-bg);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(.85rem, 1.8vw, 1.25rem);
+  box-shadow: var(--shadow);
+  margin: 1rem auto;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.graph-wrapper:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 28px 64px rgba(2,6,23,.14);
+  border-color: rgba(99,102,241,.35);
+}
+
+/* Premium gradient title */
+.graph-title{
+  margin: 0 0 .9rem 0;
+  text-align: center;
+  font-size: clamp(1.05rem, 2.6vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing:.3px;
+  background: linear-gradient(90deg, var(--indigo), var(--cyan), var(--emerald));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position:relative;
+}
+.graph-title:after{
+  content:"";
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  bottom:-8px;
+  width: clamp(70px, 12vw, 120px);
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--indigo), var(--pink));
+  opacity:.65;
+  filter: drop-shadow(0 2px 6px rgba(99,102,241,.35));
+}
+
+/* Controls layout */
+.graph-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem .8rem;
+  align-items:center;
+  justify-content:flex-end;
+  margin-bottom: .9rem;
+}
+
+/* Label chips with icons (pure CSS masks) */
+.graph-controls label{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.35rem .65rem;
+  border-radius:999px;
+  background: #f1f5f9;
+  color:#334155;
+  font-size:.87rem;
+  font-weight:800;
+  letter-spacing:.16px;
+  user-select:none;
+}
+
+/* Icon base */
+.graph-controls label::before{
+  content:"";
+  width:16px; height:16px;
+  display:inline-block;
+  background: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Calendar icon for granularity */
+.graph-controls label[for="granularity"]::before{
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H2V6a2 2 0 0 1 2-2h1V3a1 1 0 1 1 2 0v1zM2 11h20v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7zm5 3a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7z"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 24 24"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H2V6a2 2 0 0 1 2-2h1V3a1 1 0 1 1 2 0v1zM2 11h20v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7zm5 3a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7z"/></svg>');
+}
+
+/* STORE icon for Outlet (shop/storefront icon) */
+.graph-controls label[for="outletFilter"]::before{
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h18l-1.2 4.2a3 3 0 0 1-2.88 2.2H7.08A3 3 0 0 1 4.2 9.2L3 5zm2 12V12h14v5a2 2 0 0 1-2 2h-3v-3H10v3H7a2 2 0 0 1-2-2z"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5h18l-1.2 4.2a3 3 0 0 1-2.88 2.2H7.08A3 3 0 0 1 4.2 9.2L3 5zm2 12V12h14v5a2 2 0 0 1-2 2h-3v-3H10v3H7a2 2 0 0 1-2-2z"/></svg>');
+}
+
+/* sun/moon hybrid for shift */
+.graph-controls label[for="shiftFilter"]::before{
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a1 1 0 0 1 .99.86A7 7 0 1 0 19.14 11 1 1 0 0 1 20 12a8 8 0 1 1-8-8z"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a1 1 0 0 1 .99.86A7 7 0 1 0 19.14 11 1 1 0 0 1 20 12a8 8 0 1 1-8-8z"/></svg>');
+}
+
+/* SORT icon (up/down arrows) */
+.graph-controls label[for="svSort"]::before {
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5-5 5 5H7zm0 4h10l-5 5-5-5z"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10l5-5 5 5H7zm0 4h10l-5 5-5-5z"/></svg>');
+}
+
+/* Inputs/selects/buttons */
+.graph-controls select,
+.graph-controls button{
+  padding: .6rem .8rem;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  color: var(--text);
+  font-size: .95rem;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.graph-controls select:focus,
+.graph-controls button:focus{
+  outline:none;
+  box-shadow: 0 0 0 7px var(--ring);
+}
+.graph-controls button{
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-weight: 800;
+}
+.graph-controls button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(15,23,42,.10);
+}
+
+/* Chart container — aspect-ratio scales height; fills width */
+.chart-container{
+  position:relative;
+  width:100%;
+  aspect-ratio: 16 / 9;         /* responsive shape */
+  height: auto;
+  min-height: clamp(220px, 40vh, 540px);
+}
+.chart-container canvas{
+  width:100% !important;
+  height:100% !important;
+}
+
+/* Legend with soft pulse */
+.legend-inline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.65rem .95rem;
+  margin-top:.6rem;
+  color:var(--muted);
+  font-size:.92rem;
+}
+.legend-dot{
+  display:inline-block;
+  width:11px; height:11px; border-radius:999px;
+  margin-right:.5rem; vertical-align:middle;
+  background: radial-gradient(circle at 30% 30%, var(--indigo), var(--cyan));
+  position:relative;
+}
+.legend-dot::after{
+  content:"";
+  position:absolute; inset:-6px;
+  border-radius:999px;
+  background: radial-gradient(circle, rgba(99,102,241,.28), transparent 60%);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%{ transform: scale(0.9); opacity:.7; }
+  50%{ transform: scale(1.06); opacity:.38; }
+  100%{ transform: scale(0.9); opacity:.7; }
+}
+
+/* Range buttons (injected via JS) */
+.graph-range {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+}
+.graph-range .range-btn {
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: .45rem .7rem;
+  border-radius: 12px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: box-shadow .15s ease, transform .15s ease, background-color .15s ease;
+}
+.graph-range .range-btn:hover { transform: translateY(-1px); }
+.graph-range .range-btn.active {
+  background: #eef2ff;
+  box-shadow: 0 0 0 6px rgba(99,102,241,.18);
+  border-color: #c7d2fe;
+}
+
+/* Responsive control alignment (tablet/phone) */
+@media (max-width: 1024px){
+  .graph-controls{
+    justify-content: center;
+    align-items: center;
+    gap: .6rem .8rem;
+  }
+  .graph-controls > label,
+  .graph-controls > select,
+  .graph-controls > button{
+    flex: 1 1 auto;
+    text-align: center;
+    max-width: 100%;
+  }
+  .graph-controls label{
+    justify-content: center;
+  }
+}
+@media (max-width: 768px){
+  .graph-title{ font-size: clamp(1rem, 4.2vw, 1.35rem); }
+}
+@media (max-width: 480px){
+  .graph-wrapper{ padding: .8rem; }
+  .graph-controls select,
+  .graph-controls button{
+    padding: .72rem .9rem;
+    font-size: 1rem;
+  }
+}
+
+.stockvalue-legend {
+  font-size: 0.95rem;
+  color: #374151; /* neutral dark gray */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 500;
+}
+
+/* Responsive: desktop bigger */
+@media (min-width: 769px) {
+  .stockvalue-legend {
+    font-size: 1.1rem;
+    gap: 32px;
+  }
+}
+

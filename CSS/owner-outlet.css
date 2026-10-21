@@ -1,0 +1,258 @@
+/**
+ * Outlet Card & Button UI/UX - Moderate border radius, vertical stack, safe add button
+ */
+
+/* Content area for outlet page: add space at bottom for floating add button */
+.content-container-outlet {
+    position: relative;
+    padding-bottom: 100px; /* Prevent add button from overlapping last card */
+}
+
+/* Card container: vertical stack, gap between cards */
+.outlet-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    min-height: 220px;
+    margin-bottom: 0; /* No extra space here, all handled by content-container-outlet */
+}
+
+/* Outlet card: moderate border radius, not too high, shadow, spacing */
+.outlet-card {
+    background: #fff;
+    border-radius: 10px; /* Moderate radius for text fit */
+    box-shadow: 0 4px 18px rgba(67,97,238,0.09);
+    margin: 0 0 0 0; /* No side margin, use gap for spacing */
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    padding: 0;
+}
+
+/* Card body inner padding */
+.outlet-card-body {
+    padding: 18px 16px 14px 16px;
+}
+
+.outlet-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.outlet-card-title {
+    font-size: 1.17rem;
+    font-weight: 700;
+    color: #6f37c9;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    word-break: break-word;
+    max-width: 70%;
+}
+
+.outlet-card-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+    min-width: 80px;
+}
+
+.btn-edit-action, .btn-delete-action {
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 2px 10px rgba(67,97,238,0.07);
+    background: #f6f7fb;
+    color: #6f37c9;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.btn-edit-action:hover, .btn-edit-action:focus {
+    background: #6f37c9;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(67,97,238,0.21);
+    transform: scale(1.08);
+}
+.btn-delete-action:hover, .btn-delete-action:focus {
+    background: #dc3545;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(220,53,69,0.23);
+    transform: scale(1.08);
+}
+.btn-edit-action i, .btn-delete-action i {
+    font-size: 1.15rem;
+}
+
+.outlet-card-info {
+    margin-top: 10px;
+}
+
+.outlet-card-label {
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.outlet-card-address {
+    font-size: 0.97rem;
+    color: #374151;
+    margin-top: 2px;
+    word-break: break-word;
+}
+
+/* Empty state */
+.outlets-empty-state {
+    text-align: center;
+    padding: 70px 0 40px 0;
+    color: #6c757d;
+}
+.outlets-empty-state i {
+    color: #6f37c9 !important;
+}
+.purple-icon { color: #6f37c9 !important; }
+
+/* Floating Add Button: always visible, safe from touching cards */
+.btn-add-outlet {
+    position: fixed;
+    bottom: 32px;
+    right: 54px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    font-size: 2.6rem;
+    box-shadow: 0 8px 22px rgba(67,97,238,0.55);
+    z-index: 3000;
+    background: linear-gradient(135deg, #6f37c9, #4895ef);
+    color: #fff;
+    border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+
+}
+.btn-add-outlet:disabled {
+    background: #a8a8a8 !important;
+    color: #eee !important;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.btn-add-outlet:hover:not(:disabled) {
+    background: linear-gradient(135deg, #3f37c9, #6f37c9);
+    color: #fff;
+    transform: scale(1.11) translateY(-4px);
+    box-shadow: 0 16px 38px rgba(67,97,238,0.6);
+}
+
+/* Responsive for mobile/tablet: smaller radius, safe button position */
+@media (max-width: 900px) {
+    .btn-add-outlet { bottom: 30px; right: 30px; width: 80px; height: 80px; font-size: 2.6rem;}
+    .outlet-card { border-radius: 8px; }
+    .outlet-card-body { padding: 14px 8px 12px 8px; }
+}
+@media (max-width: 600px) {
+    .btn-add-outlet { bottom: 20px; right: 35px; width: 80px; height: 80px; font-size: 2.6rem;}
+    .outlet-card { border-radius: 7px; }
+}
+/* Modal: validation icon inside textfield, small size */
+.validation-icon-inside {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: transparent;
+    padding: 0 1px;
+    pointer-events: none;
+}
+.validation-icon-inside i { font-size: 18px; }
+.fa-check-circle { color: #28a745; }
+.fa-times-circle { color: #dc3545; }
+
+/* Modal and notification enhancements */
+.outlet-modal-xxl { max-width: 600px; min-width: 340px; }
+@media (max-width: 700px) { .outlet-modal-xxl { max-width: 99vw; min-width: 96vw; } }
+@media (max-width: 400px) { .outlet-modal-xxl { max-width: 100vw; min-width: 100vw; } }
+.modal-header-centered {
+    background: linear-gradient(135deg, #6f37c9, #4895ef);
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+    padding: 28px 25px 15px 25px;
+    justify-content: center;
+    text-align: center;
+}
+.modal-title-white {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-align: center !important;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+#outletModal .modal-body { padding: 28px 44px 12px 44px; }
+#outletModal .modal-footer { border-top: 1px solid #e9ecef; padding: 20px 25px; border-radius: 0 0 15px 15px; }
+.error-message {
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 3px;
+    min-height: 18px;
+    padding-left: 5px;
+}
+.input-group-text .purple-icon { font-size: 1.2rem; color: #6f37c9 !important; }
+.input-group-text { background: #f6f7fb; border-right: none; color: #6f37c9; z-index: 1; }
+
+/* Notification modal: forgot-password-style icon */
+.notification-icon {
+    display: block;
+    font-size: 3.4rem !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+.notification-icon.success .rounded-circle {
+    background: #e6f8ea !important;
+}
+.notification-icon.error .rounded-circle {
+    background: #f8e6e6 !important;
+}
+.notification-title { color: #212529; margin-bottom: 15px; font-weight: 700; font-size: 1.6rem; text-align: center; }
+.notification-message { color: #6c757d; margin-bottom: 25px; line-height: 1.5; font-size: 1.07rem; text-align: center; }
+.notification-button {
+    background: #6f37c9;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 38px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(67,97,238,0.19);
+    font-size: 1.18rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.notification-button:hover {
+    background: #4895ef;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67,97,238,0.29);
+}
+@media (max-width: 600px) {
+    .notification-button { width: 97vw; padding: 12px 0; font-size: 1.1rem; }
+    .notification-title { font-size: 1.2rem; }
+    .notification-message { font-size: 0.97rem; }
+    .notification-icon { font-size: 2.9rem !important;}
+}
+.shadow-sm { box-shadow: 0 2px 8px rgba(67,97,238,0.09);}
+.shadow-lg { box-shadow: 0 4px 26px rgba(67,97,238,0.14);}

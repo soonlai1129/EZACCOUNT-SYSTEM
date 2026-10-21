@@ -1,0 +1,575 @@
+/* Profile Customization Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+.content-container {
+    padding: 20px;
+}
+
+.profile-section, .security-section {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+}
+
+/* Input Group Styling (matching registration page) */
+.input-group {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.input-group:focus-within {
+    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.2);
+}
+
+.input-group-text {
+    background: white;
+    border-right: none;
+    padding: 0 15px;
+    color: var(--primary-color);
+    z-index: 1;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.15);
+}
+
+.form-floating.position-relative {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.validation-icon-container {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: white;
+    padding: 0 5px;
+}
+
+.validation-icon-container i {
+    font-size: 18px;
+}
+
+.fa-check-circle {
+    color: var(--success-color);
+}
+
+.fa-times-circle {
+    color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 14px;
+    margin-bottom: 15px;
+    min-height: 20px;
+}
+
+/* Update Button */
+.btn-update {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
+}
+
+
+.btn-update:hover:not(:disabled) {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(67, 97, 238, 0.4);
+}
+
+.btn-update:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    color: white;
+}
+
+/* Security Actions */
+.security-actions {
+    margin-top: 10px;
+}
+
+.action-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.action-info {
+    flex: 1;
+}
+
+.action-info h5 {
+    margin: 0 0 5px 0;
+    color: var(--dark-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.current-value {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.btn-action {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.btn-action:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    border-bottom: none;
+    padding: 20px 25px;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    margin: 0;
+    color: white !important;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+/* Send code button */
+.btn-send-code {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 0 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.btn-send-code:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-send-code:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    color: white;
+}
+
+/* Cancel button */
+.btn-cancel {
+    background: #6c757d;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* Timer display */
+.timer-text {
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#emailCountdown {
+    color: var(--error-color);
+    font-weight: 700;
+}
+
+/* Password requirements */
+.password-requirements {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 20px;
+    
+}
+
+.requirement-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 0.9rem;
+     text-align: left;
+}
+
+.requirement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.requirement-list li {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.requirement-list i {
+    margin-right: 8px;
+    width: 16px;
+}
+
+/* Toggle password */
+.toggle-password {
+    cursor: pointer;
+    background: white;
+    border-left: none;
+    transition: all 0.3s;
+}
+
+.toggle-password:hover {
+    background: #f8f9fa;
+}
+
+/* Notification Modal Styles */
+.notification-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.notification-icon.success {
+    color: var(--success-color);
+}
+
+.notification-icon.error {
+    color: var(--error-color);
+}
+
+.notification-title {
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.notification-message {
+    color: #6c757d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.notification-button {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.3);
+}
+
+.notification-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(67, 97, 238, 0.4);
+    color: white;
+}
+
+/* Logout Modal Styles */
+.modal-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.modal-title {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-message {
+    color: #6c757d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-logout {
+    background: var(--error-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Large tablets (992px - 1200px) - when buttons start to overflow */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .action-item {
+        flex-wrap: wrap;
+    }
+    
+    .action-info {
+        min-width: 60%;
+    }
+    
+    .btn-action {
+        min-width: 35%;
+    }
+}
+
+/* Tablets (768px - 991px) - stack when container gets tight */
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .action-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .btn-action {
+        align-self: flex-start;
+        min-width: 200px;
+    }
+}
+
+/* Small tablets and large phones (576px - 767px) */
+@media (max-width: 767.98px) and (min-width: 576px) {
+    .action-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .btn-action {
+        width: 100%;
+        text-align: center;
+    }
+     .action-info {
+        text-align: center;
+    }
+    
+    
+}
+
+
+/* Mobile phones (below 576px) - full stack */
+@media (max-width: 575.98px) {
+    .action-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .action-info {
+        text-align: center;
+    }
+    
+    .btn-action {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    
+}
+
+/* Emergency breakpoint for very small screens */
+@media (max-width: 400px) {
+    .security-section {
+        padding: 12px;
+    }
+    
+    .action-item {
+        padding: 10px;
+    }
+    
+    .btn-action {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
+
+/* ===== RESPONSIVE STACKING ===== */
+@media (max-width: 2100px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-md-8, .col-md-4 {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Force the success notification modal to be truly centered on phones/tablets */
+@media (max-width: 992px) {
+  /* Center the dialog in the viewport, independent of page layout/animations */
+  #notificationModal.modal .modal-dialog {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    width: 95% !important;
+    max-width: 400px !important; /* Better than 100vw for modals */
+  }
+
+  /* Ensure the content fits and can scroll if needed */
+  #notificationModal.modal .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  /* Remove any Bootstrap animations that might interfere */
+  #notificationModal.modal.fade .modal-dialog {
+    transform: translate(-50%, -50%) !important;
+  }
+
+   #notificationModal .modal-body.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #notificationModal .notification-button {
+    display: block;
+    margin: 0 auto;
+    min-width: 120px;
+    align-self: center;
+  }
+
+}
+
+/* ===== PHONE OPTIMIZATION - FULL WIDTH INPUTS ===== */
+@media (max-width: 767.98px) {
+    .profile-section, .security-section {
+        padding: 15px 10px;
+    }
+    
+    .content-container {
+        padding: 10px 5px;
+    }
+    
+    .input-group {
+        margin: 0 0 10px 0;
+    }
+    
+    .form-control {
+        padding: 14px 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+
+/* Handle long email addresses in Account Security section on phones */
+@media (max-width: 767.98px) {
+  .security-section .current-value {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 100%;
+    padding: 5px 0;
+  }
+  
+  .action-info {
+    min-width: 0; /* Allow shrinking */
+    flex: 1;
+    overflow: hidden;
+  }
+}
+
+/* Remove message title from notification modal */
+#notificationModal .notification-title {
+    display: none !important;
+}

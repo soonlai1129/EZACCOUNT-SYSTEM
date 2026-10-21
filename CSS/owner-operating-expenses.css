@@ -1,0 +1,279 @@
+/* ============================================
+   Owner Operating Expenses Styles
+   Consistent with owner-closing-report.css
+   ============================================ */
+
+/* Content */
+.content-container {
+    padding: var(--content-padding);
+    background: var(--content-bg);
+    border-radius: var(--card-radius);
+    margin: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Operating Expenses Form */
+.expenses-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.expenses-form h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f3f5;
+    padding-bottom: 10px;
+}
+
+.form-group { margin-bottom: 15px; }
+.form-group label { font-size: 14px; font-weight: 500; margin-bottom: 6px; display: block; }
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.15rem rgba(67,97,238,0.25);
+}
+
+/* Error messages */
+.form-error {
+    font-size: 13px;
+    color: var(--error-color);
+    margin-top: 4px;
+    display: none;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+}
+.btn-primary:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(67,97,238,0.25);
+}
+.btn-outline-primary {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: #fff;
+}
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Expense Table Container for Responsive Scrolling */
+.expense-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.expense-table-container .expense-table {
+    min-width: 100%;
+    margin-bottom: 0;
+    border: none;
+}
+
+/* Ensure proper width for table columns */
+.expense-table th:nth-child(1),
+.expense-table td:nth-child(1) {
+    width: 60%;
+    min-width: 200px;
+}
+
+.expense-table th:nth-child(2),
+.expense-table td:nth-child(2) {
+    width: 40%;
+    min-width: 150px;
+}
+
+/* Expense Table Styling */
+.expense-table {
+    background: #ffffff;
+    border-collapse: collapse;
+}
+
+.expense-table th {
+    background: linear-gradient(135deg, #4361ee, #3a56d4);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.expense-table td {
+    padding: 10px 15px;
+    vertical-align: middle;
+    border-color: #e9ecef;
+}
+
+.expense-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Expense Total Input Styling */
+.expense-total {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+
+.expense-total:focus {
+    box-shadow: none !important;
+    border-color: #dee2e6 !important;
+}
+
+/* Total Operating Expenses Styling */
+.total-operating-expenses {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    font-size: 1.1rem !important;
+}
+
+.input-group-text {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+/* Expense Section Spacing */
+.expense-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4361ee;
+}
+
+.expense-section:last-child {
+    margin-bottom: 0;
+}
+
+.expense-section h5 {
+    color: #4361ee;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Animation for new rows */
+@keyframes highlightRow {
+    0% {
+        background-color: rgba(67, 97, 238, 0.1);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.expense-table tbody tr.new-row {
+    animation: highlightRow 1.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expenses-form {
+        padding: 15px 20px;
+    }
+    
+    .expense-section {
+        padding: 1rem;
+    }
+    
+    .expense-table {
+        font-size: 0.9rem;
+    }
+    
+    .expense-table th,
+    .expense-table td {
+        padding: 8px 10px;
+    }
+    
+    .expense-table th:nth-child(1),
+    .expense-table td:nth-child(1) {
+        min-width: 300px;
+    }
+    
+    .expense-table th:nth-child(2),
+    .expense-table td:nth-child(2) {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .expenses-form {
+        padding: 10px 15px;
+    }
+    
+    .expense-section {
+        padding: 0.75rem;
+    }
+    
+    .expense-table th,
+    .expense-table td {
+        padding: 6px 8px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .btn,
+    .expense-section .d-flex {
+        display: none !important;
+    }
+    
+    .form-section {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+    
+    .expense-table {
+        border: 1px solid #000 !important;
+    }
+    
+    .expense-table th {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
+}
